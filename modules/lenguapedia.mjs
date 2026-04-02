@@ -18,7 +18,9 @@ globalThis.tryURLs = async function(urlList, path, hash, reqDTO) {
         return response;
       }
 
-    } catch (e) { continue; }
+    } catch (e) {
+      continue;
+    }
   }
 
   return;
@@ -47,11 +49,18 @@ globalThis.configFromRequest = function(config, req) {
   config.langFrom = req.headers['lang-from'] || 'auto';
   config.langTo = req.headers['lang-to'] || 'en';
 
-
-  if (config.hostProxy.toLowerCase() == 'host') { hostProxy = config.defaultHostProxy; }
-  if (config.wikiPrefix.toLowerCase() == 'host') { config.wikiPrefix = 'en'; }
-  if (config.langTo.toLowerCase() == 'host') { config.langTo = 'en'; }
-  if (config.langFrom.toLowerCase() == 'host') { config.langFrom = 'auto'; }
+  if (config.hostProxy.toLowerCase() == 'host') {
+    hostProxy = config.defaultHostProxy;
+  }
+  if (config.wikiPrefix.toLowerCase() == 'host') {
+    config.wikiPrefix = 'en';
+  }
+  if (config.langTo.toLowerCase() == 'host') {
+    config.langTo = 'en';
+  }
+  if (config.langFrom.toLowerCase() == 'host') {
+    config.langFrom = 'auto';
+  }
 
   if ((config.langFrom.toLowerCase() == 'auto') || (config.wikiPrefix == config.langFrom)) {
 
@@ -62,8 +71,6 @@ globalThis.configFromRequest = function(config, req) {
     config.xlangs = config.wikiPrefix + '2' + config.langFrom + '.' + config.langTo;
 
   }
-
-
 
   config.hostTarget = config.wikiPrefix + config.hostTarget;
   config.hostWiki = config.wikiPrefix + config.hostWiki;
@@ -91,7 +98,6 @@ globalThis.configFromRequest = function(config, req) {
   return config;
 }
 
-
 globalThis.checkStaticsFiles = async function(pat, res, bkcolor) {
 
   /*respond to ping from uptime robot*/
@@ -107,9 +113,7 @@ globalThis.checkStaticsFiles = async function(pat, res, bkcolor) {
     return res.endAvail(await resp.text());
   }
 
-
   if (pat == '/static/mods.css') {
-
 
     let resp = await fetch('https://files-servleteer.vercel.app/lenguapedia/default/mods.css?');
     let file = (await resp.text()).replaceAll('cce9ff', bkcolor);
@@ -126,7 +130,6 @@ globalThis.checkStaticsFiles = async function(pat, res, bkcolor) {
     );
   }
 }
-
 
 globalThis.safeURLChars = function(str) {
   str = str.replaceAll("(a')", "á")
