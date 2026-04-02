@@ -1,29 +1,26 @@
+globalThis.hache = function(word) {
 
-
-globalThis.hache=function(word){
-  
-  return 'xxhachexx'+btoa(word)+'xxhachexx';
+  return 'xxhachexx' + btoa(word) + 'xxhachexx';
 }
 
+globalThis.unhache = function(hash) {
 
-globalThis.unhache=function(hash){
-  
-  try{
+  try {
     return atob(hash.split('xxhachexx')[1]);
-  }catch(e){
+  } catch (e) {
     return undefined;
   }
-  
+
 }
 
-globalThis.removeHache=function(url){
-  
-  try{
-    let urlTokens=url.split('xxhachexx');
-    urlTokens[1]='';
+globalThis.removeHache = function(url) {
+
+  try {
+    let urlTokens = url.split('xxhachexx');
+    urlTokens[1] = '';
     return urlTokens.join('');
-  }catch(e){
+  } catch (e) {
     return url;
   }
-  
+
 }
