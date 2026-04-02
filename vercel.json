@@ -10,45 +10,46 @@
       "destination": "api/index.mjs"
     }
   ],
-    "headers": [
+  "headers": [
     {
       "source": "/",
-      "headers" : [
+      "headers": [
         {
-          "key" : "Content-Type",
-          "value" : "text/html"
+          "key": "Content-Type",
+          "value": "text/html"
         },
         {
-          "key" : "Access-Control-Allow-Origin",
-          "value" : "*"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
-    },{
+    },
+    {
       "source": "/(.*)",
-      "headers" : [
+      "headers": [
         {
-          "key" : "Access-Control-Allow-Origin",
-          "value" : "*"
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         },
         {
-          "key" : "CDN-Cache-Control",
-          "value" : "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+          "key": "CDN-Cache-Control",
+          "value": "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
         },
         {
-          "key" : "Cache-Control",
-          "value" : "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+          "key": "Cache-Control",
+          "value": "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
         },
         {
-          "key" : "Cloudflare-CDN-Cache-Control",
-          "value" : "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+          "key": "Cloudflare-CDN-Cache-Control",
+          "value": "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
         },
         {
-          "key" : "Surrogate-Control",
-          "value" : "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+          "key": "Surrogate-Control",
+          "value": "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
         },
         {
-          "key" : "Vercel-CDN-Cache-Control",
-          "value" : "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
+          "key": "Vercel-CDN-Cache-Control",
+          "value": "public, max-age=96400, s-max-age=96400, stale-if-error=31535000, stale-while-revalidate=31535000"
         }
       ]
     }
