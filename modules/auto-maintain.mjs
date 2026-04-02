@@ -47,13 +47,12 @@ export default function maintain(server) {
 
   }?.();
 
-
   void async function WeeklyReboot() {
 
     while (true) {
       await sleep(WEEK);
       if (server.listening) {
-        server.close(Ͱ=>server.listen(3000));
+        server.close(Ͱ => server.listen(3000));
       }
 
     }
