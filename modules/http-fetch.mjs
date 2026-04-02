@@ -1,8 +1,8 @@
 export async function normalizeRequest(req) {
-    let options = {
-      method: req.method,
-      headers: req.headers
-    };
+  let options = {
+    method: req.method,
+    headers: req.headers
+  };
 
   if ((req.method != 'GET') && (req.method != 'HEAD')) {
 
@@ -54,7 +54,6 @@ export function mapResHeaders(res, response) {
 
   res.removeHeader('content-encoding');
   res.removeHeader('content-length');
-
 
   return res;
 
